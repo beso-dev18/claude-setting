@@ -1,0 +1,19 @@
+{
+  "reviewers": {
+    "security": {
+      "contractKinds": ["api"],
+      "pathPatterns": ["auth(?!or)", "login", "logout", "session", "token", "permission", "role", "acl", "polic(y|ies)", "password", "secret", "crypt", "payment", "billing", "checkout", "upload", "webhook"],
+      "requirementPatterns": ["\\bauth(?!or)", "\\blog ?in\\b", "password", "\\btokens?\\b", "permission", "\\broles?\\b", "payment", "upload", "\\bPII\\b", "personal data", "encrypt", "đăng nhập", "mật khẩu", "phân quyền", "thanh toán", "tải lên", "dữ liệu cá nhân", "mã hóa", "bảo mật"]
+    },
+    "data-migration": {
+      "contractKinds": ["schema"],
+      "pathPatterns": ["migrat", "\\.sql$", "schema\\.prisma$", "alembic", "liquibase", "flyway", "/(entity|entities)/", "(^|/)models?(/|\\.py$|\\.rb$)"],
+      "requirementPatterns": ["migrat", "backfill", "database schema", "\\b(add|new) (column|field)s?\\b", "di chuyển dữ liệu", "chuyển đổi dữ liệu", "thêm (cột|trường)", "(cột|trường) mới"]
+    },
+    "ui-a11y": {
+      "contractKinds": [],
+      "pathPatterns": ["\\.(tsx|jsx|vue|svelte|html|css|scss|less)$", "(View|Screen|Page|Activity|Fragment)\\.(swift|kt|java|dart)$", "res/layout/.*\\.xml$", "\\.(storyboard|xib)$"],
+      "requirementPatterns": ["\\bscreens?\\b", "\\bUI\\b", "\\bbuttons?\\b", "\\bforms?\\b", "màn hình", "giao diện", "nút bấm"]
+    }
+  }
+}

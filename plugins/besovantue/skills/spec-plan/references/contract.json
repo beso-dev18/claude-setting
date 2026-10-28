@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "requirements": "cdocs/requirements",
+    "plans": "cdocs/plans",
+    "tasksDir": "tasks",
+    "reports": "cdocs/reports"
+  },
+  "templates": {
+    "requirement": "templates/requirement.md",
+    "README.md": "templates/README.md",
+    "context.md": "templates/context.md",
+    "summary.md": "templates/summary.md",
+    "task": "templates/task.md"
+  },
+  "noneAllowed": {
+    "README.md": ["Risks"],
+    "context.md": ["Contracts"],
+    "summary.md": ["Blockers"],
+    "task": ["Gotchas"]
+  },
+  "enums": {
+    "source": ["jira", "confluence", "file", "inline"],
+    "complexity": ["Small", "Medium", "Large", "XL"],
+    "planStatus": ["draft", "approved", "in-progress", "blocked", "done"],
+    "taskStatus": ["todo", "in-progress", "blocked", "done", "dropped"],
+    "blockerType": ["requirement-gap", "decision-needed", "dependency", "access", "technical"],
+    "blockerStatus": ["open", "resolved"],
+    "fileAction": ["CREATE", "UPDATE", "DELETE"],
+    "contractKind": ["type", "api", "schema", "config", "flag"],
+    "level": ["low", "medium", "high"]
+  },
+  "groundingCategories": ["Naming", "Error handling", "Logging", "Data access", "Tests", "Similar implementation"],
+  "notFound": "not found — no existing precedent",
+  "empty": "—",
+  "complexityMaxFiles": { "Small": 3, "Medium": 10, "Large": 20, "XL": null },
+  "slugMaxWords": 5
+}

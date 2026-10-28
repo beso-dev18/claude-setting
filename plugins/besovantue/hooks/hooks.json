@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | { read -r f; case \"$f\" in *.md|*.claude-plugin/*|*/settings.json|*/settings.local.json|*/plugin.json|*/marketplace.json|*/hooks.json|settings.json|settings.local.json|plugin.json|marketplace.json|hooks.json) printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"Reminder: this file is Claude Code settings/config or documentation. Before writing, check the reference sources in CLAUDE.md (claude-plugins-official and everything-claude-code local clones) and https://code.claude.com/docs for best practice.\"},\"systemMessage\":\"Reminder: check CLAUDE.md reference sources + https://code.claude.com/docs before editing this settings/doc file.\"}' ;; esac; }",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

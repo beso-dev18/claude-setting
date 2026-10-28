@@ -1,0 +1,15 @@
+{
+  "name": "beso-plugins",
+  "description": "Beso's personal Claude Code plugin marketplace",
+  "owner": {
+    "name": "Beso",
+    "email": "beso.dev18@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "besovantue",
+      "description": "Reminds Claude to check reference sources before updating Claude Code settings/config/docs; includes /init to generate persistent codebase summary docs, /spec-plan to draft implementation plans, /plan-review to independently audit them, /implement to build one plan task at a time, /impl-review to audit that task's code, and /code-review to audit any code change without a plan, all into cdocs/",
+      "source": "./plugins/besovantue"
+    }
+  ]
+}

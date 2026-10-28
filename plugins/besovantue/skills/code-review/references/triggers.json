@@ -1,0 +1,19 @@
+{
+  "skip": {
+    "pathPatterns": ["(^|/)(package-lock\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb|Cargo\\.lock|poetry\\.lock|uv\\.lock|composer\\.lock|Gemfile\\.lock|go\\.sum)$", "\\.min\\.(js|css)$", "(^|/)(dist|build|out|vendor|node_modules|\\.next|coverage)/", "\\.(snap|map)$", "(^|/)generated/|\\.generated\\.|_pb2\\.py$|\\.pb\\.go$"]
+  },
+  "reviewers": {
+    "security": {
+      "pathPatterns": ["auth(?!or)", "login", "logout", "session", "token", "permission", "role", "acl", "polic(y|ies)", "password", "secret", "crypt", "payment", "billing", "checkout", "upload", "webhook"],
+      "contentPatterns": ["password|passwd|secret|api[_-]?key|private[_-]?key|\\bjwt\\b|bearer", "bcrypt|argon2|createHash|crypto\\.|hashlib|cipher", "authori[sz]|authenticat|permission|csrf|\\bcors\\b|set-cookie|httpOnly", "child_process|\\bexec(Sync)?\\(|subprocess|os\\.system|\\beval\\(|new Function\\(", "innerHTML|dangerouslySetInnerHTML|v-html|\\|\\s*safe\\b", "(SELECT|INSERT|UPDATE|DELETE)\\b[^;]*(\\$\\{|\\+\\s*\\w|%s|\\.format\\()", "multer|multipart|upload|path\\.join\\([^)]*req\\."]
+    },
+    "data-migration": {
+      "pathPatterns": ["migrat", "\\.sql$", "schema\\.prisma$", "alembic", "liquibase", "flyway", "/(entity|entities)/", "(^|/)models?(/|\\.py$|\\.rb$)"],
+      "contentPatterns": ["\\b(CREATE|ALTER|DROP|RENAME)\\s+TABLE\\b", "\\bADD\\s+(COLUMN|CONSTRAINT)\\b|\\bDROP\\s+COLUMN\\b", "\\bCREATE\\s+(UNIQUE\\s+)?INDEX\\b", "\\b(add|remove|rename|change)_(column|index|reference)\\b|create_table", "\\b(addColumn|removeColumn|renameColumn|createTable|alterTable|dropTable|createIndex)\\b", "@(Column|JoinColumn|ManyToOne|OneToMany|Entity|Table)\\b", "\\bmodels\\.\\w+Field\\(|\\bmapped_column\\(|\\bColumn\\(", "^\\s*\\w+\\s+\\w+(\\[\\])?\\??\\s+@(id|default|unique|relation|map)\\b"]
+    },
+    "ui-a11y": {
+      "pathPatterns": ["\\.(tsx|jsx|vue|svelte|html|css|scss|less)$", "(View|Screen|Page|Activity|Fragment)\\.(swift|kt|java|dart)$", "res/layout/.*\\.xml$", "\\.(storyboard|xib)$"],
+      "contentPatterns": []
+    }
+  }
+}

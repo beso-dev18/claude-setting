@@ -1,0 +1,9 @@
+{
+  "name": "besovantue",
+  "version": "0.1.0",
+  "description": "Reminds Claude to check reference sources before updating Claude Code settings/config/docs; includes /init to generate persistent codebase summary docs, /spec-plan to turn a requirement into a reviewed plan folder (README, context, per-task files, summary with status and blockers), /plan-review to audit it with a validator script plus blind parallel reviewers, /implement to build one plan task at a time without touching git, /impl-review to audit that task's code with a scope script plus blind parallel reviewers, and /code-review to audit any code change the same way without a plan, all into cdocs/",
+  "author": {
+    "name": "Beso",
+    "email": "beso.dev18@gmail.com"
+  }
+}
